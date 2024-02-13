@@ -5,8 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
+*_env
 
 # Distribution / packaging
+africabeat_env/
 .Python
 build/
 develop-eggs/
