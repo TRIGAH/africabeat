@@ -98,7 +98,7 @@ sql_file_path = 'restore.sql'
 # execute_sql_file(sql_file_path, connection)
 
 # Copy data from .dat file to PostgreSQL table
-copy_data_to_postgres('4285.dat', 'fingerprints', connection)
+# copy_data_to_postgres('4285.dat', 'fingerprints', connection)
 # copy_data_to_postgres('4284.dat', 'songs', connection)
 
 # Close the database connection
