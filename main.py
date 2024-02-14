@@ -25,25 +25,31 @@ try:
 except Exception as e:
     print("Unable to connect to the database:", e)
 
-# Execute SQL queries
+# Retrieve Songs from the database
 try:
-    # Create a cursor object
     cursor = conn.cursor()
-
-    # Execute a simple SQL query
-    cursor.execute("SELECT * FROM fingerprints")
-
-    # Fetch the results
-    rows = cursor.fetchall()
-
-    # Process the results
-    for row in rows:
-        print(row)
-
-    # Close the cursor
-    cursor.close()
+    cursor.execute("SELECT * FROM songs")
+    songs_in_db = cursor.fetchall()
+    print("Songs retrieved from the database:", songs_in_db)
 except Exception as e:
-    print("Error executing SQL query:", e)
+    print("Error retrieving fingerprints from the database:", e)
 
-# Close the database connection
+# Retrieve Fingerprints from the database
+try:
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM fingerprints")
+    fingerprints_in_db = cursor.fetchall()
+    print("Fingerprints retrieved from the database:", fingerprints_in_db)
+except Exception as e:
+    print("Error retrieving fingerprints from the database:", e)
+
+# Compare fingerprints
+for fingerprint in fingerprints_in_db:
+    if fingerprint in songs_in_db:
+        print("Fingerprint", fingerprint, "exists in the songs table.")
+    else:
+        print("Fingerprint", fingerprint, "does not exist in the songs table.")
+
+# Close the cursor and the connection
+cursor.close()
 conn.close()
