@@ -38,8 +38,8 @@ try:
     sql_commands = sql_commands.split(';')
     sql_clean_commands = [ cmd.strip() for cmd in sql_commands]
     data =sql_clean_commands[17].strip()
-    df = pd.DataFrame(data)
-    df.to_csv('sql_clean_data.csv', index=False)
+    df = pd.DataFrame(list(data))
+    df.to_csv('sql_clean_data.csv', index=False, chunksize=100)
     print("WHAT "*5)
     
 
