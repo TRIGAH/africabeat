@@ -103,7 +103,7 @@ honcho==1.1.0
 httpie==3.2.1
 httplib2==0.20.4
 hyperlink==21.0.0
-idna==3.4
+idna==3.7
 incremental==21.3.0
 inflection==0.5.1
 isort==5.10.1
