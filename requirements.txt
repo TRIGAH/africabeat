@@ -185,7 +185,7 @@ termcolor==1.1.0
 toml==0.10.2
 tomli==2.0.1
 twilio==7.15.2
-Twisted==21.7.0
+Twisted==24.3.0
 twisted-iocpsupport==1.0.2
 twitter==1.19.3
 txaio==21.2.1
